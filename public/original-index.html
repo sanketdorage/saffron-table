@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Saffron Table</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'surface-tint': '#476556', 'on-tertiary-fixed-variant': '#5f4100', 'primary': '#042217', 'on-background': '#191c19', 'tertiary-container': '#442e00', 'surface-container': '#edeee9', 'surface-container-highest': '#e1e3de', 'background': '#f8faf5', 'surface-container-lowest': '#ffffff', 'on-secondary-fixed': '#271900', 'surface-container-high': '#e7e9e4', 'error-container': '#ffdad6', 'error': '#ba1a1a', 'secondary-container': '#fdcd77', 'on-tertiary-container': '#bd9449', 'secondary': '#7b5809', 'tertiary-fixed-dim': '#edbf70', 'surface-container-low': '#f3f4ef', 'surface-bright': '#f8faf5', 'primary-container': '#1b382b', 'on-primary-container': '#82a291', 'on-error-container': '#93000a', 'tertiary': '#291b00', 'outline-variant': '#c2c8c2', 'on-secondary': '#ffffff', 'primary-fixed': '#c9ead7', 'inverse-primary': '#adcebc', 'on-secondary-fixed-variant': '#5e4200', 'surface-dim': '#d9dbd6', 'tertiary-fixed': '#ffdea9', 'surface': '#f8faf5', 'on-primary-fixed': '#022015', 'inverse-on-surface': '#f0f1ec', 'on-secondary-container': '#785505', 'outline': '#727974', 'on-surface-variant': '#424844', 'on-error': '#ffffff', 'on-primary-fixed-variant': '#304d3f', 'on-tertiary': '#ffffff', 'surface-variant': '#e1e3de', 'secondary-fixed-dim': '#eebf6b', 'inverse-surface': '#2e312e', 'on-primary': '#ffffff', 'on-tertiary-fixed': '#271900', 'secondary-fixed': '#ffdea7', 'on-surface': '#191c19', 'primary-fixed-dim': '#adcebc' }, borderRadius: { 'DEFAULT': '0.125rem', 'lg': '0.25rem', 'xl': '0.5rem', 'full': '0.75rem' }, spacing: { 'margin': '1.25rem', 'gutter-desktop': '2.5rem', 'margin-desktop': '4rem', 'space-xs': '0.25rem', 'space-lg': '1.75rem', 'gutter': '1.5rem', 'space-xl': '3rem', 'space-sm': '0.5rem', 'space-md': '1rem' }, fontFamily: { 'body-sm': ['Plus Jakarta Sans'], 'display': ['Playfair Display'], 'headline-lg': ['Playfair Display'], 'title-lg': ['Playfair Display'], 'body-md': ['Plus Jakarta Sans'], 'headline-md': ['Playfair Display'], 'headline-sm': ['Playfair Display'], 'headline-lg-mobile': ['Playfair Display'], 'display-mobile': ['Playfair Display'], 'label-sm': ['Plus Jakarta Sans'], 'label-lg': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'] }, fontSize: { 'body-sm': ['13px', { lineHeight: '20px', fontWeight: '400' }], 'display': ['56px', { lineHeight: '64px', letterSpacing: '-0.02em', fontWeight: '400' }], 'headline-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.01em', fontWeight: '400' }], 'title-lg': ['19px', { lineHeight: '26px', fontWeight: '500' }], 'body-md': ['15px', { lineHeight: '24px', fontWeight: '400' }], 'headline-md': ['28px', { lineHeight: '36px', fontWeight: '400' }], 'headline-sm': ['22px', { lineHeight: '30px', fontWeight: '500' }], 'headline-lg-mobile': ['28px', { lineHeight: '36px', letterSpacing: '0', fontWeight: '400' }], 'display-mobile': ['38px', { lineHeight: '46px', letterSpacing: '-0.01em', fontWeight: '400' }], 'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.12em', fontWeight: '600' }], 'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.04em', fontWeight: '600' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.08em', fontWeight: '600' }], 'body-lg': ['17px', { lineHeight: '28px', fontWeight: '400' }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(4,34,23,0.05)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Saffron Table Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzoPJPpgij4Jaa35w7mkz2IGsLbwqYWPTSV9ol_zDZNidltb9gsVux6nLFdqB3if15m8f0jCH8UtqXZiHngVW1irSlXhxKhpaVbSLds-56Q5GXi3fS0oBt9UL6XFdIsSiAuQBEXiVzSqoIDTcs-LuVzb84Kp3roVPbE-x7p5lHBy8fsMlFCHmQPLlcPxk7tSu0gLwlzV8C1M-ou0xMRPmlEsNaJ50zFW_WzgzkJUwQE7ChZsa4aK66Fg"/><div class="flex flex-col"><span class="font-title-lg text-title-lg text-primary tracking-tight leading-none">Saffron Table</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest leading-none mt-1">Home</span></div></div><div class="flex items-center gap-space-xs"><a class="h-11 px-4 rounded bg-secondary text-surface-container-lowest font-label-md text-label-md uppercase tracking-widest flex items-center justify-center transition-all hover:bg-on-secondary-container active:scale-[0.98] shadow-sm" data-path="book-table" href="#">Reserve</a><button aria-label="Open Navigation Menu" class="w-11 h-11 flex items-center justify-center text-primary transition-colors hover:text-secondary" onclick="document.getElementById('mobile-drawer').classList.remove('translate-x-full')" type="button"><span class="material-symbols-outlined text-[26px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-[60] transform translate-x-full transition-transform duration-300 ease-in-out" id="mobile-drawer"><div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"></div><div class="absolute top-0 right-0 w-[84%] max-w-[340px] h-full bg-surface-container-lowest shadow-[0_20px_40px_-10px_rgba(4,34,23,0.25)] flex flex-col pt-safe pb-safe z-10"><div class="h-20 px-margin flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="Saffron Table Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzoPJPpgij4Jaa35w7mkz2IGsLbwqYWPTSV9ol_zDZNidltb9gsVux6nLFdqB3if15m8f0jCH8UtqXZiHngVW1irSlXhxKhpaVbSLds-56Q5GXi3fS0oBt9UL6XFdIsSiAuQBEXiVzSqoIDTcs-LuVzb84Kp3roVPbE-x7p5lHBy8fsMlFCHmQPLlcPxk7tSu0gLwlzV8C1M-ou0xMRPmlEsNaJ50zFW_WzgzkJUwQE7ChZsa4aK66Fg"/><span class="font-title-lg text-title-lg text-primary">Saffron Table</span></div><button aria-label="Close Menu" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="flex-1 overflow-y-auto px-margin py-space-md flex flex-col justify-between"><nav class="flex flex-col space-y-1"><a class="py-3 px-3 rounded font-title-lg text-title-lg text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between" data-path="home" href="#" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span>Home</span><span class="material-symbols-outlined text-outline-variant text-[18px]">arrow_forward</span></a><a class="py-3 px-3 rounded font-title-lg text-title-lg text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between" data-path="menu" href="#" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span>Menu</span><span class="material-symbols-outlined text-outline-variant text-[18px]">arrow_forward</span></a><a class="py-3 px-3 rounded font-title-lg text-title-lg text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between" data-path="about" href="#" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span>About</span><span class="material-symbols-outlined text-outline-variant text-[18px]">arrow_forward</span></a><a class="py-3 px-3 rounded font-title-lg text-title-lg text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between" data-path="gallery" href="#" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span>Gallery</span><span class="material-symbols-outlined text-outline-variant text-[18px]">arrow_forward</span></a><a class="py-3 px-3 rounded font-title-lg text-title-lg text-primary hover:bg-surface-container-low transition-colors flex items-center justify-between" data-path="contact" href="#" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')"><span>Contact</span><span class="material-symbols-outlined text-outline-variant text-[18px]">arrow_forward</span></a><a class="mt-space-sm py-3 px-4 rounded bg-primary-container text-on-primary font-label-lg text-label-lg text-center tracking-wide uppercase transition-colors hover:bg-primary" data-path="book-table" href="#" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')">Book a Table</a></nav><div class="pt-space-md mt-space-md border-t border-surface-container"><p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Reservations &amp; Inquiries</p><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">+1 (555) 839-2044</p><p class="font-body-sm text-body-sm text-on-surface-variant">concierge@saffrontable.com</p></div></div></div></div><main class="flex flex-col relative w-full pt-20 pb-28 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="relative px-margin pt-space-md pb-space-lg">
+<div class="relative w-full rounded-xl overflow-hidden shadow-xl bg-primary-container text-on-primary">
+<div class="relative h-[440px] w-full">
+<img class="w-full h-full object-cover brightness-[0.78]" data-alt="Close up gourmet plating of vibrant golden saffron-infused carnaroli risotto garnished delicately with shimmering edible gold leaf, micro purple herbs, and aromatic smoked spice oil, positioned on raw hand-thrown dark earthenware against soft candlelit shadows in an intimate luxury restaurant setting, cinematic shallow depth of field, warm amber glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWegD7iL_10gXWO_LGK45VPZqLYCBu4svBEUpj4Obu3_OSLRt1syXWQBFSkqMTtDMe-L-Hnz7hnLCDFZkOAf8Y1a2nptIGl57Ahkz4GVSOTX4OGBvRO6pBr4zCHqR2nClC47z9MNOflzjZeGYi5O4mZxrAA1hEfwu0lk-kTO7rhuIAGqE83OuL8Q9tYZJS7Y1TfgfwoOxQ2VtLf3sBRbnJEt6cx2WXWCMkrmOIYhY4EcKU28E-GtltAQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+<div class="absolute top-space-md left-space-md right-space-md flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary" style="font-variation-settings: 'FILL' 1;">hotel_class</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Michelin Selected 2024</span>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary text-surface-container-lowest font-label-sm text-label-sm uppercase tracking-wider">
+            Farm to Table
+          </span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-space-md flex flex-col space-y-space-sm">
+<p class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-[0.2em]">Sanctuary of Taste</p>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-surface-bright leading-tight">
+            Where Heritage Spices Meet Modern Artistry
+          </h1>
+<p class="font-body-sm text-body-sm text-surface-container-high/90 line-clamp-2">
+            An intimate culinary pilgrimage celebrating ancestral saffron harvests, slow flame hearths, and sensory refinement.
+          </p>
+<div class="pt-space-xs flex flex-col sm:flex-row gap-space-xs">
+<a class="h-12 px-5 rounded bg-secondary hover:bg-on-secondary-container active:scale-[0.98] text-surface-container-lowest font-label-md text-label-md uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-md" href="#reservation-anchor">
+<span class="material-symbols-outlined text-[18px]">event_seat</span>
+              Reserve a Table
+            </a>
+<a class="h-12 px-5 rounded bg-surface-container-lowest/20 backdrop-blur-md hover:bg-surface-container-lowest/30 text-surface-bright font-label-md text-label-md uppercase tracking-wider flex items-center justify-center transition-all" href="#tasting-preview">
+              Explore Menu
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HIGHLIGHT RIBBON -->
+<section class="px-margin py-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-around text-center shadow-sm">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[22px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider mt-1">Open Hearth</span>
+</div>
+<div class="w-[1px] h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[22px]">spa</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider mt-1">Kashmir Saffron</span>
+</div>
+<div class="w-[1px] h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[22px]">wine_bar</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider mt-1">Cellar Reserve</span>
+</div>
+</div>
+</section>
+<!-- 2. CURATED FEATURED DISHES -->
+<section class="px-margin pt-space-lg pb-space-sm">
+<div class="flex items-end justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.18em]">Chef's Selection</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-0.5">Curated Masterpieces</h2>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[18px]">stars</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold">Tasting Icons</span>
+</div>
+</div>
+<!-- Dish Carousel / Vertical Stack -->
+<div class="flex flex-col space-y-space-md">
+<!-- Dish 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An artisanal plate of Royal Saffron Risotto prepared with Acquerello carnaroli rice, glowing radiant gold, topped with gossamer 24-karat edible gold leaf, freshly shaved aged Parmigiano, and micro purple borage flowers, resting on a charcoal matte ceramic dish with warm candlelight ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS1tKl5YbFd8bKcS6LGqinR7kKMBl4pKuI0U0eUZjKr9s26UtBL1SSqm3557OemSuXJ1MhTa4Ef3ShvLe41FtDZMKEIylupYyu3XqConubjTNwkz2uX-It_MR__UOAKh6qlW48QGosvp5dis9OSZI6T-atgMPPqokeoBan0aDsuCysrH-1ZvD_1wsmacDpj78hXNr2YMJ4EUDNiYn3BE3f0itXCgIQ3a8I-A_zP2Gea-lEeNWV4wz7OA"/>
+<div class="absolute top-3 right-3 bg-primary/80 backdrop-blur-sm text-surface-bright px-3 py-1 rounded-full font-label-md text-label-md tracking-wider">
+            $42
+          </div>
+<div class="absolute bottom-3 left-3 flex gap-1.5">
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full">Signature</span>
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-secondary text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full">Gluten-Free</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Royal Saffron Risotto</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">
+            Acquerello carnaroli rice, hand-harvested Persian super negin saffron, 36-month cave-aged Parmigiano-Reggiano, and hand-pressed botanical gold leaf.
+          </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">liquor</span> Pairing: 2019 Corton-Charlemagne
+            </span>
+<span class="material-symbols-outlined text-[18px] text-outline">east</span>
+</div>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Tender 14-hour slow braised cardamom lamb shank glazed in rich glossy saffron jus, served alongside baby charred heirloom rainbow carrots, glistening ruby pomegranate arils, and emerald cilantro emulsion on a warm cream stoneware dish, atmospheric mood lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29akH_BdHxjzDhax3m2OkTP-CbvvJeP13xxNgmw4Xjcogyk7E-GEWTmzBEdXHmqrM1NBMy6yNi3WmAKB8weaKcsp1NAI6w5JodGObmnwHkp37CNGLqAuZhRUF4KWDvIKpZVMp1wo1Qtyk63h2GkJBt1oXVo-xvNEQnaWTUeVcWH3q19gwliSilbrIafCWzwzPKXo6Y66TEBTMLtIfHYI7zy9hQLdFdgiZnD5gHvRQIoc8WFikgBtWfA"/>
+<div class="absolute top-3 right-3 bg-primary/80 backdrop-blur-sm text-surface-bright px-3 py-1 rounded-full font-label-md text-label-md tracking-wider">
+            $54
+          </div>
+<div class="absolute bottom-3 left-3 flex gap-1.5">
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full">Slow Hearth</span>
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-secondary text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full">Heirloom</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Slow-Braised Cardamom Lamb Shank</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">
+            14-hour low embers braise, wood-charred baby heirloom carrots, saffron bone marrow jus, and a tangy reduced wild pomegranate essence.
+          </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">liquor</span> Pairing: 2017 Barolo Riserva
+            </span>
+<span class="material-symbols-outlined text-[18px] text-outline">east</span>
+</div>
+</div>
+</div>
+<!-- Dish 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Crispy pan-seared wild turbot fillet sitting atop an airy golden saffron-infused velouté reduction, bright green sea samphire spears, and delicate drops of dark smoked leek oil on an ivory fine porcelain plate, fine dining Michelin aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT1udNuj6gDon61Z-qj2B2pEbFesr8NoOqslhyitDh9l-4p_lP_D9lg2Z30Txd7Sm5Fspkz7sKw1CeW3w0JAvnWe1L2j3lK6dQx75N9G44xWTpsbYG-3FQy8rF9SJ0lLIuHSn1Xj9-htQhn7wfRnNnnFTy8WQbKdmcI2kTmSTDp20PfQxpqUq9x-psoqpR3v6UySzgbXHoioASEC6TV1-pEGufS_4S0DdB06c5EIHNyS4V1BeM_YQ-Xg"/>
+<div class="absolute top-3 right-3 bg-primary/80 backdrop-blur-sm text-surface-bright px-3 py-1 rounded-full font-label-md text-label-md tracking-wider">
+            $48
+          </div>
+<div class="absolute bottom-3 left-3 flex gap-1.5">
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-primary text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full">Wild Caught</span>
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-secondary text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full">Coastal</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Pan-Seared Wild Turbot</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">
+            Wild line-caught turbot fillet, fragrant saffron-infused velouté, crisp coastal sea samphire, and cold-pressed smoked leek drop oil.
+          </p>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">liquor</span> Pairing: 2021 Meursault Premier Cru
+            </span>
+<span class="material-symbols-outlined text-[18px] text-outline">east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. MENU CATEGORIES PREVIEW & TASTING TABS -->
+<section class="px-margin pt-space-lg pb-space-md" id="tasting-preview">
+<div class="text-center max-w-sm mx-auto mb-space-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em]">Epicurean Chapters</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Menu Collections</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Explore our multi-course seasonal movements crafted for discovery.</p>
+</div>
+<!-- Category Pill Switcher -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none mb-space-md" id="menu-tab-nav">
+<button class="tab-btn px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap bg-primary text-on-primary shadow-sm" onclick="switchMenuCategory('starters', this)">
+        Starters
+      </button>
+<button class="tab-btn px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container" onclick="switchMenuCategory('mains', this)">
+        Mains
+      </button>
+<button class="tab-btn px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container" onclick="switchMenuCategory('desserts', this)">
+        Desserts
+      </button>
+<button class="tab-btn px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container" onclick="switchMenuCategory('beverages', this)">
+        Beverages
+      </button>
+</div>
+<!-- Dynamic Menu Containers -->
+<div class="category-panel flex flex-col space-y-space-sm" id="category-starters">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Smoked Burrata &amp; Saffron Peach</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$24</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Artisanal buffalo burrata smoked over fruitwood, poached Khorasan saffron peaches, toasted pine nut praline, wild rocket.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase">Vegetarian</span>
+<span class="text-label-sm font-label-sm text-outline">Estate Olive Oil</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Spiced Duck Liver Parfait</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$28</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Silky emulsion infused with star anise and Kashmiri cloves, dried fig &amp; shallot jam, warm brioche leaf bread.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase">Heritage Poultry</span>
+<span class="text-label-sm font-label-sm text-outline">Aged Armagnac</span>
+</div>
+</div>
+</div>
+<div class="category-panel hidden flex flex-col space-y-space-sm" id="category-mains">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Wood-Fired Black Cod</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$52</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Glazed in fermented saffron miso, tender charred brassica shoots, roasted bone dashi broth, cured golden roe.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase">Sustainably Sourced</span>
+<span class="text-label-sm font-label-sm text-outline">Charcoal Kissed</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Truffle &amp; Morel Risotto</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$46</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Foraged spring morels, Umbrian black winter truffles, cultured grass-fed butter, and 40-month aged Grana Padano veil.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase">Wild Harvest</span>
+<span class="text-label-sm font-label-sm text-outline">Earth Reserve</span>
+</div>
+</div>
+</div>
+<div class="category-panel hidden flex flex-col space-y-space-sm" id="category-desserts">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Golden Saffron &amp; Cardamom Panna Cotta</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$20</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Infused Piedmont dairy, crystallized Iranian pistachio crumb, saffron honey gelée, crisp floral spun tuile.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase">Pâtisserie Signature</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Dark Valrhona Chocolate Tart</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$22</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          70% Guanaja single-origin chocolate ganache, smoked sea salt flakes, cardamom crème anglaise, gold dust ribbon.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase">Single Origin</span>
+</div>
+</div>
+</div>
+<div class="category-panel hidden flex flex-col space-y-space-sm" id="category-beverages">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">The Golden Empress Cocktail</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$22</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Botanical London dry gin infused with Kashmir saffron, cold-pressed bergamot, prosecco reduction, hand-carved ice sphere.
+        </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Artisan Saffron Chai Infusion</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$12</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          First flush Assam tea, green cardamom pods, crushed saffron threads, steamed biodynamic almond milk, clover honey.
+        </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex justify-between items-baseline">
+<h4 class="font-title-lg text-title-lg text-primary">Sommelier Reserve Wine Flight</h4>
+<span class="font-title-lg text-title-lg text-secondary font-medium">$65</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Three bespoke pours curated from boutique biodynamic estates in Burgundy, Piedmont, and the Bekaa Valley.
+        </p>
+</div>
+</div>
+</section>
+<!-- 4. RESTAURANT STORY & CHEF PHILOSOPHY -->
+<section class="px-margin py-space-lg">
+<div class="bg-primary text-on-primary rounded-xl overflow-hidden shadow-xl p-space-md sm:p-space-lg relative">
+<div class="flex flex-col space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Distinguished female chef Devina Vance smiling with calm confidence in an artisanal slate-colored chef coat inside a warmly lit professional kitchen, culinary director at work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAubeO4JKNV3kAFRyE9Xis8M9zFXDN6pv3pj_HgnkmoxdWDFB7BEetPVxEUPGbbh9oymfixN0A74UpvD6-6k_6eZJQuJQV1TMBXSFDRJHePj5vL5O9Ha53amZZm9Go0xgWInOPu9qCR6JAryx7qzXGqDn4kilJQMp7FeRAClCtGy24hcIsY9hCXjQEPZF38lJaTZUfVrSSHJM6DRgH_bOvK4mb7VvSA1yKpXNPZCxgSpATVlnVI_UO0Kw"/>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-lg text-title-lg text-surface-bright">Chef Devina Vance</h3>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Culinary Director &amp; Founder</span>
+</div>
+</div>
+<!-- Quote -->
+<div class="relative pl-6">
+<span class="absolute left-0 top-0 font-display text-display text-secondary leading-none select-none -mt-4">“</span>
+<p class="font-headline-sm text-headline-sm text-surface-bright/95 italic leading-snug">
+            True culinary luxury is never about excess; it is the quiet alchemy of reverence for soil, flame, and the patient growers who sustain our heritage.
+          </p>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+          At Saffron Table, every grain and petal honors generations of craft. We source our crimson saffron directly from third-generation family co-operatives in Pampore, Kashmir and Khorasan. Each service is choreographed around our live open hearth, welcoming guests not merely to dinner, but to an unhurried communion of warmth and hospitality.
+        </p>
+<!-- Provenance Badges -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-primary-container/80 p-3 rounded flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">handshake</span>
+<span class="font-label-sm text-label-sm text-surface-bright uppercase tracking-wide">Direct Fair Trade</span>
+</div>
+<div class="bg-primary-container/80 p-3 rounded flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">fireplace</span>
+<span class="font-label-sm text-label-sm text-surface-bright uppercase tracking-wide">Slow Flame Hearth</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. GALLERY SHOWCASE & ATMOSPHERE -->
+<section class="px-margin py-space-md">
+<div class="flex items-end justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.18em]">Sensory Spaces</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-0.5">Atmosphere &amp; Cellar</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">4 Views</span>
+</div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="relative h-44 rounded overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Interior dining room of luxury restaurant Saffron Table featuring linen draped tables, custom brass sconces, soft golden candle reflections, and plush forest green velvet banquet seating in an intimate architectural atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY_qZsASr0DW48llyICq3Le8899b444O7Io-JvI1wlpOGXncQULZMfnLblmkKUxSwW6oQOoLAwElj3IPouGW3-_nvtRuEsn94BaheCyfGN3ji72seNQtUailSF34ZdWUPwsQbBXxsKUhaWIXfY9Vi7rl-r7kN4r6sytcVJCY2otMCu05Mcmk66wKAWBuM_WhRZpqWtKlQGzbi_eQdw4GSGcjctlZ0JHdFSNUMOL1VpLImTQV3Bn0qLQA"/>
+<div class="absolute bottom-2 left-2 bg-primary/75 px-2 py-0.5 rounded text-[10px] text-surface-bright font-medium">Main Hall</div>
+</div>
+<div class="relative h-44 rounded overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A private dining wine vault with backlit aged oak shelving displaying rare vintage wine bottles, polished basalt tasting counter, and intimate warm glow under high vaulted stone ceiling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB33tECXXW32XDgvVMNZ0dOW5-WyvdsA6EMlFn5FBLwpizQFFes9-FQlqLON2RIhRHYBbQ8v89gdpF7sYu8h9L8ViirpNSr-mKm92JDuvZsKO78bbqKV0awIkz4g9OHeBWptqHNiIwdzkDmc7fcXLq4A3G7CAgsbzG-7QxkVIffwLkvxdRrjEhtFsIsqPX62ZQKZvD92g-OfxJK-eGZ_IcQ0fsLcp9ljjCjc8Eb730H6nnDP0pmdDivQ"/>
+<div class="absolute bottom-2 left-2 bg-primary/75 px-2 py-0.5 rounded text-[10px] text-surface-bright font-medium">Wine Vault</div>
+</div>
+<div class="relative h-44 rounded overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Fine dining table arrangement with delicate stemware crystal glasses, folded natural linen napkins, golden brass cutlery, and an unlit beeswax taper candle on textured natural stone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtIgGlTjEPfc6SPtTrFvXL7DOg_buLSMqA-bg6heR8bDjeAZ5bKN54FmFeDjes0z3joKZyviO1Lx5HqqzCAYaUsmscCOlpULF-SXPWZQVg00WzSFV2UTt9osO9b1tTPTizajBrsZVOg3z3i3AQuSC73yTx9fYQiLKNbQslCvULXnDy8P0Fzapz2GOH_lHC6tbmvMVA_quvPfeH1MxDqN8ermeGshxIm1nJsDlyAClXhQVvA0MOR2fPQ"/>
+<div class="absolute bottom-2 left-2 bg-primary/75 px-2 py-0.5 rounded text-[10px] text-surface-bright font-medium">Artisanal Table</div>
+</div>
+<div class="relative h-44 rounded overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Handcrafted cocktail lounge bar with polished emerald marble bartop, amber glass spirit decanters, sliced dried citrus garnishes, and an elegant mixologist crafting a golden cocktail in low light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4RcbliTjmZet-XsUKVPVkLIx8TOJLHtqrxAjy0JcZW8I58hlY2ggWLq7OlUrg-qMYLOrEqWENfJSsMhHhcxnbtzWbHTR1bMQs7hyGPaRr0FwW0URStIzmFNo7zTEAg_DBC4B4JClG5sUFrzn3sgMQUozoLa7kYU1uEVJbtmsk0uWNITVvGgQPFsQwx1oIy0Ty4aXZ6ly_ImvxvK5DicQDc67eRhpGKXbke0BjsTZ3wDoS57fjMhVwg"/>
+<div class="absolute bottom-2 left-2 bg-primary/75 px-2 py-0.5 rounded text-[10px] text-surface-bright font-medium">The Apothecary Bar</div>
+</div>
+</div>
+</section>
+<!-- 6. GUEST TESTIMONIALS & PRESS -->
+<section class="px-margin py-space-lg">
+<div class="text-center max-w-sm mx-auto mb-space-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em]">Words of Acclaim</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Critical Praise</h2>
+</div>
+<div class="flex flex-col space-y-space-sm">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Critic Choice</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">
+          “Devina Vance delivers an unforgettable temple of flavor. The saffron risotto alone redefines modern luxury dining on the western seaboard.”
+        </p>
+<div class="mt-space-sm pt-2 flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-semibold">The New York Food Chronicle</span>
+<span class="font-label-sm text-label-sm text-outline">Autumn 2024</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Verified Guest</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">
+          “An ethereal culinary journey. The quiet pacing, the warm saffron glow, and the thoughtful wine pairings made our anniversary truly transcendent.”
+        </p>
+<div class="mt-space-sm pt-2 flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-semibold">Julian &amp; Clara Sterling</span>
+<span class="font-label-sm text-label-sm text-outline">San Francisco, CA</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. TABLE RESERVATION FORM -->
+<section class="px-margin py-space-lg" id="reservation-anchor">
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-md max-w-[680px] mx-auto">
+<div class="text-center mb-space-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em]">Private Bookings</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Reserve Your Table</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Join us for an intimate multi-course culinary experience.
+        </p>
+</div>
+<!-- Demo Badge -->
+<div class="mb-space-md p-3 rounded bg-surface-container-low text-primary flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="font-semibold text-primary">Fictional Demo Content:</strong> Table reservations will become active upon backend integration.
+        </p>
+</div>
+<form class="flex flex-col space-y-space-md" id="reservation-form" onsubmit="handleReservationSubmit(event)">
+<!-- Date & Guest Count Row -->
+<div class="flex flex-col sm:flex-row gap-space-sm">
+<!-- Date Picker -->
+<div class="flex-1 flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1" for="res-date">
+              Dining Date
+            </label>
+<div class="relative flex items-center">
+<input class="w-full h-11 px-3 bg-surface rounded text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors" id="res-date" required="" type="date" value="2025-05-18"/>
+</div>
+</div>
+<!-- Guest Count Stepper -->
+<div class="flex-1 flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
+              Party Size
+            </label>
+<div class="h-11 px-3 bg-surface rounded flex items-center justify-between">
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-all" onclick="adjustGuestCount(-1)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary" id="guest-count-display">2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Guests</span>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-all" onclick="adjustGuestCount(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Seating Preference -->
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
+            Seating Preference
+          </label>
+<div class="grid grid-cols-3 gap-2">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="seating" type="radio" value="Main Dining Room"/>
+<div class="h-11 rounded bg-surface peer-checked:bg-primary peer-checked:text-on-primary text-on-surface flex items-center justify-center text-center p-1 text-[12px] font-semibold tracking-wide transition-all shadow-sm">
+                Main Room
+              </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="seating" type="radio" value="Chef's Counter"/>
+<div class="h-11 rounded bg-surface peer-checked:bg-primary peer-checked:text-on-primary text-on-surface flex items-center justify-center text-center p-1 text-[12px] font-semibold tracking-wide transition-all shadow-sm">
+                Chef's Counter
+              </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="seating" type="radio" value="Garden Terrace"/>
+<div class="h-11 rounded bg-surface peer-checked:bg-primary peer-checked:text-on-primary text-on-surface flex items-center justify-center text-center p-1 text-[12px] font-semibold tracking-wide transition-all shadow-sm">
+                Terrace
+              </div>
+</label>
+</div>
+</div>
+<!-- Time Slot Selection -->
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
+            Available Service Times
+          </label>
+<div class="grid grid-cols-3 gap-2">
+<button class="time-slot-btn h-11 rounded bg-primary text-on-primary font-label-md text-label-md tracking-wider flex items-center justify-center shadow-sm" onclick="selectTimeSlot('5:30 PM', this)" type="button">
+              5:30 PM
+            </button>
+<button class="time-slot-btn h-11 rounded bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md tracking-wider flex items-center justify-center" onclick="selectTimeSlot('7:00 PM', this)" type="button">
+              7:00 PM
+            </button>
+<button class="time-slot-btn h-11 rounded bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md tracking-wider flex items-center justify-center" onclick="selectTimeSlot('8:30 PM', this)" type="button">
+              8:30 PM
+            </button>
+</div>
+</div>
+<!-- Guest Contact Details -->
+<div class="flex flex-col space-y-space-xs pt-space-xs">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block" for="res-name">
+              Full Name
+            </label>
+<input class="w-full h-11 px-3 bg-surface rounded text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors" id="res-name" placeholder="e.g. Lady Vivienne Montgomery" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block" for="res-email">
+                Email Address
+              </label>
+<input class="w-full h-11 px-3 bg-surface rounded text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors" id="res-email" placeholder="vivienne@estate.com" required="" type="email"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block" for="res-phone">
+                Phone Number
+              </label>
+<input class="w-full h-11 px-3 bg-surface rounded text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors" id="res-phone" placeholder="+1 (555) 019-2834" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block" for="res-notes">
+              Special Occasion &amp; Dietary Notes
+            </label>
+<textarea class="w-full p-3 bg-surface rounded text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors resize-none" id="res-notes" placeholder="Anniversary, pescatarian preferences, allium sensitivities..." rows="2"></textarea>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="h-12 w-full rounded bg-secondary hover:bg-on-secondary-container active:scale-[0.99] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all mt-2" id="reservation-submit-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">dinner_dining</span>
+          Request Reservation
+        </button>
+</form>
+<!-- Confirmation Toast -->
+<div class="hidden mt-space-md p-space-md rounded-xl bg-primary text-on-primary flex flex-col items-center text-center space-y-2 animate-fade" id="reservation-confirmation">
+<div class="w-10 h-10 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">done_all</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-surface-bright">Request Received with Honor</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container max-w-sm">
+          Our maître d' will verify cellar allocations and confirm your reservation via private dispatch within 2 hours.
+        </p>
+</div>
+</div>
+</section>
+<!-- 8. OPENING HOURS & LOCATION / CONTACT -->
+<section class="px-margin pt-space-xs pb-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm max-w-[680px] mx-auto">
+<!-- Hours Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Service Hours</span>
+</div>
+<div class="space-y-2 text-on-surface">
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Mon – Thu</span>
+<span class="font-medium text-primary">5:30 PM – 10:30 PM</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Fri – Sat</span>
+<span class="font-medium text-primary">5:00 PM – 11:30 PM</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Sunday Matinée</span>
+<span class="font-medium text-primary">12:00 PM – 3:30 PM</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Sunday Evening</span>
+<span class="font-medium text-primary">5:30 PM – 10:00 PM</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low p-2.5 rounded text-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Private Receptions Welcome</span>
+</div>
+</div>
+<!-- Location & Contact Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Location &amp; Valet</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-medium">484 Heritage Grove Way</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mayfair Arts District, Suite 100</p>
+<div class="mt-3 flex items-start gap-2 bg-surface-container-low p-2 rounded">
+<span class="material-symbols-outlined text-[18px] text-secondary flex-shrink-0 mt-0.5">directions_car</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">
+              Complimentary curbside valet service begins 30 minutes prior to evening dinner seating.
+            </p>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<a class="flex-1 h-10 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-primary-container transition-colors" href="tel:+15558392044">
+<span class="material-symbols-outlined text-[16px]">call</span>
+            Call
+          </a>
+<a class="flex-1 h-10 rounded bg-surface-container-low text-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-surface-container transition-colors" href="mailto:concierge@saffrontable.com">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+            Email
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Guest Stepper Logic
+  let guestCount = 2;
+  function adjustGuestCount(delta) {
+    guestCount = Math.max(1, Math.min(8, guestCount + delta));
+    const display = document.getElementById('guest-count-display');
+    if (display) display.innerText = guestCount;
+  }
+
+  // Time Slot Picker Logic
+  let selectedSlot = '5:30 PM';
+  function selectTimeSlot(slot, btnElement) {
+    selectedSlot = slot;
+    document.querySelectorAll('.time-slot-btn').forEach(btn => {
+      btn.className = 'time-slot-btn h-11 rounded bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md tracking-wider flex items-center justify-center';
+    });
+    btnElement.className = 'time-slot-btn h-11 rounded bg-primary text-on-primary font-label-md text-label-md tracking-wider flex items-center justify-center shadow-sm';
+  }
+
+  // Menu Category Switcher Logic
+  function switchMenuCategory(categoryKey, activeBtn) {
+    document.querySelectorAll('.category-panel').forEach(panel => {
+      panel.classList.add('hidden');
+    });
+    const targetPanel = document.getElementById('category-' + categoryKey);
+    if (targetPanel) {
+      targetPanel.classList.remove('hidden');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.className = 'tab-btn px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container';
+    });
+    activeBtn.className = 'tab-btn px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all whitespace-nowrap bg-primary text-on-primary shadow-sm';
+  }
+
+  // Reservation Submit Interaction
+  function handleReservationSubmit(event) {
+    event.preventDefault();
+    const submitBtn = document.getElementById('reservation-submit-btn');
+    const confirmation = document.getElementById('reservation-confirmation');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> Processing Request...';
+    }
+    setTimeout(() => {
+      if (confirmation) {
+        confirmation.classList.remove('hidden');
+        confirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Requested';
+      }
+    }, 600);
+  }
+</script><footer class="mt-space-xl bg-surface-container-low px-margin pt-space-xl pb-space-lg text-on-surface-variant"><div class="max-w-[680px] mx-auto flex flex-col space-y-space-lg"><div class="flex flex-col items-start gap-space-xs"><div class="flex items-center gap-space-sm"><img alt="Saffron Table Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzoPJPpgij4Jaa35w7mkz2IGsLbwqYWPTSV9ol_zDZNidltb9gsVux6nLFdqB3if15m8f0jCH8UtqXZiHngVW1irSlXhxKhpaVbSLds-56Q5GXi3fS0oBt9UL6XFdIsSiAuQBEXiVzSqoIDTcs-LuVzb84Kp3roVPbE-x7p5lHBy8fsMlFCHmQPLlcPxk7tSu0gLwlzV8C1M-ou0xMRPmlEsNaJ50zFW_WzgzkJUwQE7ChZsa4aK66Fg"/><span class="font-headline-sm text-headline-sm text-primary">Saffron Table</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">An artisanal sanctuary celebrating regional spice heritage, slow-fire culinary craftsmanship, and quiet epicurean hospitality.</p></div><div class="bg-surface-container-lowest p-space-md rounded shadow-[0_1px_8px_rgba(4,34,23,0.03)]"><p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Postal Residence</p><p class="font-body-md text-body-md text-on-surface mt-1">484 Heritage Grove Way, Mayfair Arts District</p><p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Telephone: <a class="text-primary underline decoration-secondary" href="tel:+15558392044">+1 (555) 839-2044</a></p></div><div class="bg-surface-container-lowest p-space-md rounded shadow-[0_1px_8px_rgba(4,34,23,0.03)]"><p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Service Hours</p><div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface mt-2"><span>Wednesday – Sunday</span><span class="font-label-md text-label-md text-primary">5:30 PM – 11:00 PM</span></div><div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface mt-1"><span>Weekend Degustation Matinée</span><span class="font-label-md text-label-md text-primary">12:00 PM – 3:30 PM</span></div><div class="flex justify-between items-center font-body-sm text-body-sm text-outline mt-1"><span>Monday – Tuesday</span><span>Private Receptions</span></div></div><div class="bg-surface-container-lowest p-space-md rounded shadow-[0_1px_8px_rgba(4,34,23,0.03)]"><p class="font-title-lg text-title-lg text-primary">Seasonal Dispatch</p><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Receive private cellar allocations, private tasting announcements, and seasonal menu previews.</p><form class="mt-space-sm flex flex-col gap-space-xs" onsubmit="event.preventDefault()"><div class="flex gap-space-xs"><input class="flex-1 h-11 px-3 bg-surface rounded text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Your private email address" type="email"/><button class="h-11 px-4 bg-primary text-on-primary rounded font-label-md text-label-md uppercase tracking-wider transition-colors hover:bg-primary-container" type="submit">Join</button></div></form></div><div class="flex items-center justify-between pt-space-xs"><div class="flex items-center gap-space-sm"><a aria-label="Instagram" class="w-11 h-11 rounded-full bg-surface flex items-center justify-center text-primary hover:text-secondary transition-colors shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">camera</span></a><a aria-label="Michelin Guide" class="w-11 h-11 rounded-full bg-surface flex items-center justify-center text-primary hover:text-secondary transition-colors shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">hotel_class</span></a><a aria-label="Facebook" class="w-11 h-11 rounded-full bg-surface flex items-center justify-center text-primary hover:text-secondary transition-colors shadow-sm" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a></div><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Est. 2024</span></div><div class="pt-space-md border-t border-surface-container"><p class="font-label-sm text-label-sm text-outline text-center leading-relaxed">Fictional demonstration showcase engineered solely for portfolio and architectural experience review. Saffron Table is not an operational establishment.</p></div></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(4,34,23,0.06)]" data-active-classes="text-secondary font-semibold"><div class="h-20 px-space-xs flex justify-around items-center"><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-14 transition-colors text-secondary font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-sm text-label-sm mt-1">Home</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-primary transition-colors" data-path="menu" href="#"><span class="material-symbols-outlined text-[22px]">restaurant_menu</span><span class="font-label-sm text-label-sm mt-1">Menu</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-secondary hover:text-on-secondary-container transition-colors" data-path="book-table" href="#"><div class="w-10 h-10 rounded-full bg-secondary text-surface-container-lowest flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">calendar_month</span></div><span class="font-label-sm text-label-sm text-secondary mt-0.5">Reserve</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-primary transition-colors" data-path="gallery" href="#"><span class="material-symbols-outlined text-[22px]">photo_camera</span><span class="font-label-sm text-label-sm mt-1">Gallery</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-primary transition-colors" data-path="contact" href="#"><span class="material-symbols-outlined text-[22px]">location_on</span><span class="font-label-sm text-label-sm mt-1">Visit</span></a></div></nav></body></html>
